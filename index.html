@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Arithmetic Functions</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-image: url(https://wallpaperaccess.com/full/237647.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.6); /* dark transparent background */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            text-align: center;
+            width: 500px;
+        }
+
+        h2, p, h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        input {
+            font-size: 22px;
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            font-size: 20px;
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #ffffffcc;
+            color: #000;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffcc00;
+        }
+
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Basic Arithmetic Operations</h2>
+        <p>Enter two numbers:</p>
+        <input type="number" id="num1" placeholder="Enter first number"><br>
+        <input type="number" id="num2" placeholder="Enter second number"><br>
+
+        <button onclick="performAddition()">Add</button>
+        <button onclick="performSubtraction()">Subtract</button>
+        <button onclick="performMultiplication()">Multiply</button>
+        <button onclick="performDivision()">Divide</button>
+
+        <h3 id="result">Result will appear here</h3>
+    </div>
+
+    <script>
+        function performAddition() {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            let result = a + b;
+            document.getElementById("result").innerText = "Addition: " + result;
+        }
+
+        function performSubtraction() {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            let result = a - b;
+            document.getElementById("result").innerText = "Subtraction: " + result;
+        }
+
+        function performMultiplication() {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            let result = a * b;
+            document.getElementById("result").innerText = "Multiplication: " + result;
+        }
+
+        function performDivision() {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            if (b !== 0) {
+                let result = a / b;
+                document.getElementById("result").innerText = "Division: " + result;
+            } else {
+                document.getElementById("result").innerText = "Cannot divide by zero!";
+            }
+        }
+    </script>
+</body>
+</html>
